@@ -2,7 +2,7 @@ import Container from "@/components/layout/Container";
 import Button from "@/components/parts/Button";
 import GlowingButton from "@/components/parts/GlowingButton";
 import Hr from "@/components/parts/Hr";
-import { partners, services } from "@/lib/defaults";
+import { APP_NAME, partners, services } from "@/lib/defaults";
 import { ArrowRight, ChevronsRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -34,9 +34,9 @@ export default function Home() {
         {/* Hero section */}
         <section id="hero" className="min-h-[50vh] sm:min-h-[70vh] flex flex-col md:pt-10">
           <div className="w-fit flex flex-1 duration-500 fly-up opacity-0 -translate-2 max-w-4xl mx-auto flex-col justify-center items-center md:items-start">
-            <h1 className="text-2xl sm:text-4xl text-pink-500 text-center w-full font-[900] py-3">DolineSystems</h1>
+            <h1 className="text-2xl sm:text-4xl text-pink-500 text-center w-full font-[900] py-3">{ APP_NAME }</h1>
             <h1 className="text-3xl sm:text-[3.125rem] sm:leading-[4rem] font-[700] text-sky-800 text-center pb-10">
-              We're results oriented Software Engineering Team, <span>Ready to address your tech challanges</span>
+              We&apos;re results oriented Software Engineering Team, <span>Ready to address your tech challanges</span>
             </h1>
             <div className="w-fit mx-auto group p-3 cursor-pointer flex gap-5 items-center shadow-xl drop-shadow-xl rounded-[4rem] hover:bg-sky-400 transition-all duration-300">
               <span className="relative flex h-3 w-3 justify-center items-center">
@@ -113,7 +113,7 @@ export default function Home() {
           <div className="w-full max-w-[500px] p-5">
             <h1 className="text-4xl sm:text-5xl text-primary-foreground font-[700]">{"We're "} here to help.</h1>
             <p className="text-muted py-5">
-              Just imagine and let's build it into a real solution that can impact a postive change onto your business, clients or your comunity at large. 
+              Just imagine and let&apos;s build it into a real solution that can impact a postive change onto your business, clients or your comunity at large. 
             </p>
             <Link href="/talk" className="w-fit flex">
               <Button className="bg-slate-700 hover:bg-slate-200 min-w-60 text-slate-200 hover:text-slate-600 font-bold" >Talk to the Expert</Button>
@@ -123,7 +123,7 @@ export default function Home() {
         <div className="relative  w-full md:w-1/2">
           <div className="w-full h-full absolute left-0 top-0 bg-primary/50"/>
           <div className="w-full flex justify-center items-center">
-            <Image src="/coding.gif" alt="Coding 2" height={1000} width={1000} className="w-full h-auto" />
+            <Image unoptimized src="/coding.gif" alt="Coding 2" height={1000} width={1000} className="w-full h-auto" />
           </div>
         </div>
       </Container>

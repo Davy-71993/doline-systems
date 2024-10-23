@@ -1,35 +1,5 @@
 
-import { LuCode2 } from "react-icons/lu"
-import { BsFileCode } from "react-icons/bs";
-import { BiCodeBlock } from "react-icons/bi";
-import { TbCloudComputing } from "react-icons/tb";
-import { PiSealQuestion } from "react-icons/pi";
-import { GrHost } from "react-icons/gr";
-import { FaLaptopCode } from "react-icons/fa";
-import { LiaBusinessTimeSolid } from "react-icons/lia";
-import { GiShoppingCart } from "react-icons/gi";
-import { RiProfileLine } from "react-icons/ri";
-import { MdCorporateFare } from "react-icons/md";
-import { IoSchoolOutline } from "react-icons/io5";
-import { GiOrganigram } from "react-icons/gi";
-import { SlScreenDesktop } from "react-icons/sl";
-import { LiaAndroid } from "react-icons/lia";
-import { TfiApple } from "react-icons/tfi";
-import { SiDailydotdev } from "react-icons/si";
-import { FaAws } from "react-icons/fa6";
-import { SiGooglecloud } from "react-icons/si";
-import { SiMicrosoftazure } from "react-icons/si";
-import { BiAnalyse } from "react-icons/bi";
-import { MdArchitecture } from "react-icons/md";
-import { MdOutlineDesignServices } from "react-icons/md";
-import { GrIntegration } from "react-icons/gr";
-import { VscDebugConsole } from "react-icons/vsc";
-import { GrHostMaintenance } from "react-icons/gr";
-import { TbApi } from "react-icons/tb";
-import { FaReact } from "react-icons/fa";
-import { TbDatabase } from "react-icons/tb";
-
-export const APP_NAME = "Doline Dev"
+export const APP_NAME = "Doline.dev"
 export const APP_URL = process.env.NODE_ENV === "development" 
     ? `http://localhost:${process.env.PORT}` 
     : "https://doline.dev"
@@ -192,44 +162,4 @@ export const partners = [
     },
 ]
 
-export const icons: any = {
-    "Web Development": LuCode2,
-    "Web": FaLaptopCode,
-    "ERP": LiaBusinessTimeSolid, 
-    "E-Commerce": GiShoppingCart, 
-    "Potfolio": RiProfileLine, 
-    "Corporate": MdCorporateFare, 
-    "E-Learning": IoSchoolOutline, 
-    "NGO": GiOrganigram, 
-    "Landing Pages": SlScreenDesktop,
-    
-    "Mobile Development": BsFileCode,
-    "Android": LiaAndroid,
-    "IOS": TfiApple,
-
-    "Desktop Development": BiCodeBlock,
-    "Windows": FaLaptopCode,
-    "Mac": FaLaptopCode,
-    "Linux": FaLaptopCode,
-
-    "Cloud Computing": TbCloudComputing,
-    "DevOps": SiDailydotdev,
-    "AWS": FaAws,
-    "GCP": SiGooglecloud,
-    "Azure": SiMicrosoftazure,
-
-    "Technical Consultation": PiSealQuestion,
-    "Analysis": BiAnalyse, 
-    "Architecture": MdArchitecture, 
-    "Design": MdOutlineDesignServices, 
-    "Integration": GrIntegration, 
-    "Testing": VscDebugConsole, 
-    "Maintenance": GrHostMaintenance,
-
-    "Web Hosting": GrHost,
-    "Web Site": FaLaptopCode,
-    "API": TbApi,
-    "React App": FaReact,
-    "Database": TbDatabase,
-}
 

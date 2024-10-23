@@ -47,4 +47,5 @@ const GlowingButton = forwardRef<HTMLButtonElement, GlowingProps>(({ className, 
     )
 })
 
+GlowingButton.displayName = "GlowingButton"
 export default GlowingButton;

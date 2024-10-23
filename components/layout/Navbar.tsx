@@ -56,7 +56,7 @@ const Navbar = () => {
             </div>
           </div>
           <Button variant={'info'}  className='sm:min-w-40 text-sm sm:text-base py-1 sm:py-2'>
-            Let's Talk
+            {"Let's"} Talk
           </Button>
           <Menu/>
         </div>

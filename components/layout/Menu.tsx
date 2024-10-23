@@ -28,9 +28,7 @@ const Menu = () => {
 
     return () => {
       window.removeEventListener('click', (e)=>{
-        if(!menuRef.current?.contains(e.target as Node)){
           setOpen(false)
-        }
       })
     }
   }, [])

@@ -57,7 +57,7 @@ const SigninForm = () => {
             </button>
         </form>
         <div className="text-center text-gray-300">
-            Don't have an account?
+            Don&apos;t have an account?
             <a className="text-purple-300 hover:underline" href="#">Sign up</a>
         </div>
         </div>

@@ -9,4 +9,6 @@ const Hr = forwardRef<HTMLDivElement, HrProps>(({ className, ...props}, ref) => 
     )
 })
 
+
+Hr.displayName = "Hr"
 export default Hr;
