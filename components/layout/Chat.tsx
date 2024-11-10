@@ -76,7 +76,7 @@ const ChatBoard = () => {
                             onClick={()=>{ setOpen(false) } } 
                             className="hover:bg-destructive rounded-none text-destructive hover:text-sky-100 px-5 py-0 group"
                         >
-                            <RiCloseLargeLine size={20} className="group-hover:scale-125 delay-200 transition-all duration-300"/>
+                            <RiCloseLargeLine size={20} className="group-hover:scale-125 transition-all"/>
                         </Button>
                     </div>
                     <div className="h-full overflow-y-auto flex flex-col">

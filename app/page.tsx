@@ -38,7 +38,7 @@ export default function Home() {
             <h1 className="text-3xl sm:text-[3.125rem] sm:leading-[4rem] font-[700] text-sky-800 text-center pb-10">
               We&apos;re results oriented Software Engineering Team, <span>Ready to address your tech challanges</span>
             </h1>
-            <div className="w-fit mx-auto group p-3 cursor-pointer flex gap-5 items-center shadow-xl drop-shadow-xl rounded-[4rem] hover:bg-sky-400 transition-all duration-300">
+            <Link href={"/contact-us"} className="w-fit mx-auto group p-3 cursor-pointer flex gap-5 items-center shadow-xl drop-shadow-xl rounded-[4rem] hover:bg-sky-400 transition-all duration-300">
               <span className="relative flex h-3 w-3 justify-center items-center">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full transition-all bg-muted-foreground group-hover:bg-primary-foreground opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-muted-foreground transition-all group-hover:bg-primary-foreground"></span>
@@ -47,7 +47,7 @@ export default function Home() {
                 Get in touch with the quality you deserve.
                 <ArrowRight className="animation-bounce" />
               </span>
-            </div>
+            </Link>
           </div>
           <div className="w-full opacity-0 translate-y-2 fly-in duration-500 delay-300 py-6 md:py-10 max-w-4xl mx-auto relative">
             <div className="absolute h-full w-full bg-transparent top-0 left-0"></div>
@@ -74,11 +74,6 @@ export default function Home() {
                   <p className="w-full text-2xl font-[400] py-10 text-center">
                     { service.descritpion }
                   </p>
-                  <div className="w-full self-end px-5 flex flex-col flex-1 justify-end">
-                    <Link href={`/services/${service.name.toLowerCase().replaceAll(' ', '-').replaceAll('.', '')}`}>
-                      <GlowingButton className={`bg-${ service.color }-600 max-w-72 mx-auto`} text={ service.btnText }/>
-                    </Link>
-                  </div>
                 </div>
               ))
             }
@@ -135,7 +130,7 @@ export default function Home() {
         </h1>
         <div className="w-full flex flex-col md:flex-row px-5 py-20 border rounded-sm">
           <div className="p-5 w-full md:w-1/2 flex flex-col gap-5 border-b md:border-b-0 md:border-r">
-            <div className="w-full flex w-full items-center gap-2 md:gap-5">
+            <div className="w-full flex items-center gap-2 md:gap-5">
               <Image src="/blusonet.png" alt="Blusonet" height={1000} width={1000} className="w-6 md:w-10 h-auto" />
               <h1 className="text-sky-800 text-lg md:text-2xl">Blusonet</h1>
             </div>
@@ -151,12 +146,12 @@ export default function Home() {
               </div>
               <div className="flex h-fit flex-col gap-1">
                 <h2 className="text-sm md:text-lg font-bold">Wanyama Simon Peter</h2>
-                <p className="text-sm md:text-sm text-muted-foreground font-thin font-bold">CEO of Blusonet</p>
+                <p className="text-sm md:text-sm text-muted-foreground font-bold">CEO of Blusonet</p>
               </div>
             </div>
           </div>
           <div className="p-5 w-full md:w-1/2 flex flex-col gap-5">
-            <div className="w-full flex w-full items-center gap-2 md:gap-5">
+            <div className="w-full flex  items-center gap-2 md:gap-5">
               <Image src="/assubo.png" alt="Blusonet" height={1000} width={1000} className="w-6 md:w-10 h-auto" />
               <h1 className="text-sky-800 text-lg md:text-2xl">Assubo</h1>
             </div>
@@ -172,7 +167,7 @@ export default function Home() {
               </div>
               <div className="flex h-fit flex-col gap-1">
                 <h2 className="text-sm md:text-lg font-bold">Sanya Samuel Wafula</h2>
-                <p className="text-xs md:text-sm text-muted-foreground font-thin font-bold">CEO of Assubo</p>
+                <p className="text-xs md:text-sm text-muted-foreground font-bold">CEO of Assubo</p>
               </div>
             </div>
           </div>
