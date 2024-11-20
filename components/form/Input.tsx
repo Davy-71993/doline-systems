@@ -7,16 +7,16 @@ type InputProps = ComponentProps<"input"> & {
 };
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ label, id, className, labelStyles, ...props }, ref) => {
-    const labelClassName = cn(
-      "absolute left-5 peer-focus:left-5 px-3 -top-3 transition-all duration-300 text-base peer-placeholder-shown:top-2 peer-focus:-top-3.5",
+  ({ label, id, placeholder, className, labelStyles, ...props }, ref) => {
+    const labelClassNames = cn(
+      "absolute left-5 px-3 transition-all duration-300 text-base peer-placeholder-shown:top-2 -top-3.5 peer-focus:-top-3.5 cursor-text",
       labelStyles
     );
     return (
-      <div className="relative">
+      <div className="relative w-full">
         <input
           ref={ref}
-          placeholder="john@example.com"
+          placeholder={label}
           className={cn(
             "peer py-2 w-full border-2 rounded-sm px-8 placeholder-transparent focus:outline-none",
             className
@@ -24,7 +24,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           id={id}
           {...props}
         />
-        <label className={labelClassName} htmlFor={id}>
+        <label className={labelClassNames} htmlFor={id}>
           {label}
         </label>
       </div>

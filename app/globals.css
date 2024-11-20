@@ -77,297 +77,316 @@ body {
     @apply bg-background text-foreground;
   }
   /* HTML: <div class="batman"></div> */
-.batman {
-  /* width: 100px; */
-  /* max-width: 400px; */
-  aspect-ratio: 3;
-  background: #000;
-  --g:#000 calc(100% - 1px),#0000;
-  mask:
-    conic-gradient(from 170deg at 47% 8%,#0000,#000 2deg 20deg,#0000 22deg) 
-     0 0/100% 50% no-repeat,
-    conic-gradient(from 170deg at 53% 8%,#0000,#000 2deg 20deg,#0000 22deg) 
-     0 0/100% 50% no-repeat,
-    radial-gradient(4.5% 20% at 50% 35%,var(--g)),
-    conic-gradient(#000 0 0) exclude,
-    radial-gradient(20% 35% at 50% -5%,var(--g)),
-    radial-gradient(30% 44% at 20% 100%,var(--g)),
-    radial-gradient(30% 44% at 80% 100%,var(--g)),
-    radial-gradient(16% 51% at left ,var(--g)),
-    radial-gradient(16% 51% at right,var(--g));
-}
-
-.button {
-  /* --border_radius: 9999px; */
-  --transtion: 0.3s ease-in-out;
-  --offset: 2px;
-
-  cursor: pointer;
-  position: relative;
-
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  transform-origin: center;
-
-  padding: 1rem 2rem;
-  /* background-color: transparent; */
-
-  border: none;
-  border-radius: var(--border_radius);
-  transform: scale(calc(1 + (var(--active, 0) * 0.1)));
-
-  transition: transform var(--transtion);
-}
-
-.button::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 100%;
-  height: 100%;
-  background-color: var(--black-700);
-
-  border-radius: var(--border_radius);
-  box-shadow: inset 0 0.5px hsl(0, 0%, 100%), inset 0 -1px 2px 0 hsl(0, 0%, 0%),
-    0px 4px 10px -4px hsla(0 0% 0% / calc(1 - var(--active, 0))),
-    0 0 0 calc(var(--active, 0) * 0.375rem) hsl(260 97% 50% / 0.75);
-
-  transition: all var(--transtion);
-  z-index: 10;
-}
-
-.button::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 100%;
-  height: 100%;
-  background-color: hsla(260 97% 61% / 0.75);
-  background-image: radial-gradient(
-      at 51% 89%,
-      hsla(266, 45%, 74%, 1) 0px,
-      transparent 50%
-    ),
-    radial-gradient(at 100% 100%, hsla(266, 36%, 60%, 1) 0px, transparent 50%),
-    radial-gradient(at 22% 91%, hsla(266, 36%, 60%, 1) 0px, transparent 50%);
-  background-position: top;
-
-  opacity: var(--active, 0);
-  border-radius: var(--border_radius);
-  transition: opacity var(--transtion);
-  z-index: 2;
-}
-
-.button:is(:hover, :focus-visible) {
-  --active: 1;
-}
-.button:active {
-  transform: scale(1);
-}
-
-.button .dots_border {
-  --size_border: calc(100% + 2px);
-
-  overflow: hidden;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: var(--size_border);
-  height: var(--size_border);
-  background-color: transparent;
-
-  border-radius: var(--border_radius);
-  z-index: -10;
-}
-
-.button .dots_border::before {
-  content: "";
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transform-origin: left;
-  transform: rotate(0deg);
-
-  width: 100%;
-  height: 2rem;
-  background-color: white;
-
-  mask: linear-gradient(transparent 0%, white 120%);
-  animation: rotate 2s linear infinite;
-}
-
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
+  .batman {
+    /* width: 100px; */
+    /* max-width: 400px; */
+    aspect-ratio: 3;
+    background: #000;
+    --g: #000 calc(100% - 1px), #0000;
+    mask: conic-gradient(
+          from 170deg at 47% 8%,
+          #0000,
+          #000 2deg 20deg,
+          #0000 22deg
+        )
+        0 0/100% 50% no-repeat,
+      conic-gradient(from 170deg at 53% 8%, #0000, #000 2deg 20deg, #0000 22deg)
+        0 0/100% 50% no-repeat,
+      radial-gradient(4.5% 20% at 50% 35%, var(--g)),
+      conic-gradient(#000 0 0) exclude,
+      radial-gradient(20% 35% at 50% -5%, var(--g)),
+      radial-gradient(30% 44% at 20% 100%, var(--g)),
+      radial-gradient(30% 44% at 80% 100%, var(--g)),
+      radial-gradient(16% 51% at left, var(--g)),
+      radial-gradient(16% 51% at right, var(--g));
   }
-}
 
-.button .sparkle {
-  position: relative;
-  z-index: 10;
+  .button {
+    /* --border_radius: 9999px; */
+    --transtion: 0.3s ease-in-out;
+    --offset: 2px;
 
-  width: 1.75rem;
-}
+    cursor: pointer;
+    position: relative;
 
-.button .sparkle .path {
-  fill: currentColor;
-  stroke: currentColor;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 
-  transform-origin: center;
+    transform-origin: center;
 
-  color: hsl(0, 0%, 100%);
-}
+    padding: 1rem 2rem;
+    /* background-color: transparent; */
 
-.button:is(:hover, :focus) .sparkle .path {
-  animation: path 1.5s linear 0.5s infinite;
-}
+    border: none;
+    border-radius: var(--border_radius);
+    transform: scale(calc(1 + (var(--active, 0) * 0.1)));
 
-.button .sparkle .path:nth-child(1) {
-  --scale_path_1: 1.2;
-}
-.button .sparkle .path:nth-child(2) {
-  --scale_path_2: 1.2;
-}
-.button .sparkle .path:nth-child(3) {
-  --scale_path_3: 1.2;
-}
+    transition: transform var(--transtion);
+  }
 
-@keyframes path {
-  0%,
-  34%,
-  71%,
-  100% {
+  .button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    height: 100%;
+    background-color: var(--black-700);
+
+    border-radius: var(--border_radius);
+    box-shadow: inset 0 0.5px hsl(0, 0%, 100%),
+      inset 0 -1px 2px 0 hsl(0, 0%, 0%),
+      0px 4px 10px -4px hsla(0 0% 0% / calc(1 - var(--active, 0))),
+      0 0 0 calc(var(--active, 0) * 0.375rem) hsl(260 97% 50% / 0.75);
+
+    transition: all var(--transtion);
+    z-index: 10;
+  }
+
+  .button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+    height: 100%;
+    background-color: hsla(260 97% 61% / 0.75);
+    background-image: radial-gradient(
+        at 51% 89%,
+        hsla(266, 45%, 74%, 1) 0px,
+        transparent 50%
+      ),
+      radial-gradient(at 100% 100%, hsla(266, 36%, 60%, 1) 0px, transparent 50%),
+      radial-gradient(at 22% 91%, hsla(266, 36%, 60%, 1) 0px, transparent 50%);
+    background-position: top;
+
+    opacity: var(--active, 0);
+    border-radius: var(--border_radius);
+    transition: opacity var(--transtion);
+    z-index: 2;
+  }
+
+  .button:is(:hover, :focus-visible) {
+    --active: 1;
+  }
+  .button:active {
     transform: scale(1);
   }
-  17% {
-    transform: scale(var(--scale_path_1, 1));
+
+  .button .dots_border {
+    --size_border: calc(100% + 2px);
+
+    overflow: hidden;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: var(--size_border);
+    height: var(--size_border);
+    background-color: transparent;
+
+    border-radius: var(--border_radius);
+    z-index: -10;
   }
-  49% {
-    transform: scale(var(--scale_path_2, 1));
+
+  .button .dots_border::before {
+    content: "";
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: left;
+    transform: rotate(0deg);
+
+    width: 100%;
+    height: 2rem;
+    background-color: white;
+
+    mask: linear-gradient(transparent 0%, white 120%);
+    animation: rotate 2s linear infinite;
   }
-  83% {
-    transform: scale(var(--scale_path_3, 1));
+
+  @keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .button .sparkle {
+    position: relative;
+    z-index: 10;
+
+    width: 1.75rem;
+  }
+
+  .button .sparkle .path {
+    fill: currentColor;
+    stroke: currentColor;
+
+    transform-origin: center;
+
+    color: hsl(0, 0%, 100%);
+  }
+
+  .button:is(:hover, :focus) .sparkle .path {
+    animation: path 1.5s linear 0.5s infinite;
+  }
+
+  .button .sparkle .path:nth-child(1) {
+    --scale_path_1: 1.2;
+  }
+  .button .sparkle .path:nth-child(2) {
+    --scale_path_2: 1.2;
+  }
+  .button .sparkle .path:nth-child(3) {
+    --scale_path_3: 1.2;
+  }
+
+  @keyframes path {
+    0%,
+    34%,
+    71%,
+    100% {
+      transform: scale(1);
+    }
+    17% {
+      transform: scale(var(--scale_path_1, 1));
+    }
+    49% {
+      transform: scale(var(--scale_path_2, 1));
+    }
+    83% {
+      transform: scale(var(--scale_path_3, 1));
+    }
+  }
+
+  .button .text_button {
+    position: relative;
+    z-index: 10;
+
+    background-image: linear-gradient(
+      90deg,
+      hsla(0 0% 100% / 1) 0%,
+      hsla(0 0% 100% / var(--active, 0)) 150%
+    );
+    background-clip: text;
+
+    font-size: 1rem;
+    color: transparent;
+  }
+
+  .fade-in {
+    animation-name: fade-in;
+    /* animation-duration: 0.3s;
+    animation-delay: 0.1s; */
+    animation-fill-mode: forwards;
+  }
+
+  .fly-in {
+    animation-name: fly-in;
+    animation-duration: 0.3s;
+    animation-delay: 0.1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  .fly-up {
+    animation-name: fly-up;
+    animation-duration: 0.3s;
+    animation-delay: 0.1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  .fly-left {
+    animation-name: fly-left;
+    animation-duration: 0.3s;
+    animation-delay: 0.1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  .fly-right {
+    animation-name: fly-right;
+    animation-duration: 0.3s;
+    animation-delay: 0.1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fly-in {
+    from {
+      transform: translateY(0.5rem);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fly-up {
+    from {
+      transform: translateY(-0.5rem);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fly-left {
+    from {
+      transform: translatex(0.5rem);
+      opacity: 0;
+    }
+    to {
+      transform: translatex(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes fly-right {
+    from {
+      transform: translatex(-0.5rem);
+      opacity: 0;
+    }
+    to {
+      transform: translatex(0);
+      opacity: 1;
+    }
+  }
+
+  .on-set {
+    animation: set-set 1s infinite;
+  }
+
+  @keyframes set-set {
+    0%,
+    100% {
+      transform: translatex(-25%);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translatex(0);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
   }
 }
-
-.button .text_button {
-  position: relative;
-  z-index: 10;
-
-  background-image: linear-gradient(
-    90deg,
-    hsla(0 0% 100% / 1) 0%,
-    hsla(0 0% 100% / var(--active, 0)) 150%
-  );
-  background-clip: text;
-
-  font-size: 1rem;
-  color: transparent;
-}
-
-.fly-in {
-  animation-name: fly-in;
-  animation-duration: .3s;
-  animation-delay: .1s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-}
-
-.fly-up {
-  animation-name: fly-up;
-  animation-duration: .3s;
-  animation-delay: .1s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-}
-
-.fly-left {
-  animation-name: fly-left;
-  animation-duration: .3s;
-  animation-delay: .1s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-}
-
-.fly-right {
-  animation-name: fly-right;
-  animation-duration: .3s;
-  animation-delay: .1s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-}
-
-@keyframes fly-in {
-  from {
-    transform: translateY(0.5rem);
-    opacity: 0;
-  }
-  to {
-    transform:  translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fly-up {
-  from {
-    transform: translateY(-0.5rem);
-    opacity: 0;
-  }
-  to {
-    transform:  translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fly-left {
-  from {
-    transform: translatex(0.5rem);
-    opacity: 0;
-  }
-  to {
-    transform:  translatex(0);
-    opacity: 1;
-  }
-}
-
-@keyframes fly-right {
-  from {
-    transform: translatex(-0.5rem);
-    opacity: 0;
-  }
-  to {
-    transform:  translatex(0);
-    opacity: 1;
-  }
-}
-
-.on-set {
-  animation: set-set 1s infinite;
-}
-
-@keyframes set-set {
-  0%, 100% {
-    transform: translatex(-25%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    transform: translatex(0);
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
-}
-
-}
-
-

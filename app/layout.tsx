@@ -1,9 +1,9 @@
+import ChatBoard from "@/components/layout/Chat";
+import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import ChatBoard from "@/components/layout/Chat";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -18,7 +18,8 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "DOLINE",
-  description: "Your tech partner for software design, development, maintainance, integrations, and more.",
+  description:
+    "Your tech partner for software design, development, maintainance, integrations, and more.",
 };
 
 export default function RootLayout({
@@ -41,3 +42,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+// https://doline.vercel.app/

@@ -1,8 +1,7 @@
 import Container from "@/components/layout/Container";
-import Button from "@/components/parts/Button";
 import Modal from "@/components/parts/Modal";
+import Scheduler from "@/components/parts/Scheduler";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function WebDevPage() {
   return (
@@ -22,15 +21,26 @@ export default function WebDevPage() {
             <Modal
               triggerLabel="Call us now"
               triggerVariant="success"
-              className="w-full h-96 max-w-lg bg-sky-200 shadow-lg border-2 border-gray-500 rounded-sm"
+              className=""
             >
-              <div className="">Hello Modal</div>
+              <div className="p-5">
+                <h1 className="text-2xl text-sky-900 font-[700] text-center">
+                  Call us now.
+                </h1>
+                <p className="text-lg text-emerald-600 text-center font-thin">
+                  We are currently available on,
+                </p>
+                <div className="py-10 flex flex-col gap-5 items-center">
+                  <p className="text-2xl font-bold text-sky-900">
+                    +256777921033
+                  </p>
+                  <p className="text-2xl font-bold text-sky-900">
+                    +256751437412
+                  </p>
+                </div>
+              </div>
             </Modal>
-            <Link href={"#"} className="w-full max-w-80">
-              <Button variant={"info"} className="w-full h-full">
-                Schedule a meeting
-              </Button>
-            </Link>
+            <Scheduler />
           </div>
         </div>
         <div className="w-full flex justify-center items-center">
