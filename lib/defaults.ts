@@ -1,3 +1,8 @@
+import desktopJson from "@/lotties/desktop.json";
+import mobileJson from "@/lotties/mobile.json";
+import webJson from "@/lotties/web.json";
+import computingJsom from "@/lotties/web_dev.json";
+
 export const APP_NAME = "Doline.dev";
 export const APP_URL =
   process.env.NODE_ENV === "development"
@@ -6,13 +11,14 @@ export const APP_URL =
 
 export const services = [
   {
+    id: "web-dev",
+    href: "services/#web-dev",
     name: "Web Development",
     descritpion:
-      "We develop super responsive and engaging web applications for any kind business need.",
+      "We develop super responsive and engaging web applications for any kind business need.  Get online with a bold, new and attractive web app that captures the essence of your brand and maximizes your sales",
     btnText: "Get Your Site",
-    image: "",
+    json: webJson,
     color: "rose",
-    href: "/services/web-dev",
     list: [
       "ERP",
       "E-Commerce",
@@ -24,43 +30,47 @@ export const services = [
     ],
   },
   {
+    id: "mobile-dev",
     name: "Mobile Development",
+    href: "services/#mobile-dev",
     descritpion:
-      "We develop mobile applications that suit your business and engage your clients.",
+      "We develop mobile applications that suit your business and engage your clients. Get online with a bold, new and attractive mobile app that captures the essence of your brand and maximizes your sales",
     btnText: "Get Your App",
-    image: "",
+    json: mobileJson,
     color: "fuchsia",
-    href: "/services/mobile-dev",
     list: ["Android", "IOS"],
   },
   {
+    id: "desktop-dev",
     name: "Desktop Development",
+    href: "services/#desktop-dev",
     descritpion:
-      "We develop Desktop applications that streamline your business opperations.",
+      "We develop Desktop applications that streamline your business opperations. Streamline your business opperations with a custom system that understands you and your business needs.",
     btnText: "Talk to us",
-    image: "",
+    json: desktopJson,
     color: "lime",
-    href: "/services/desktop-dev",
     list: ["Windows", "Mac", "Linux"],
   },
+  // {
+  //   id: "cloud-computing",
+  //   name: "Cloud Computing",
+  //   href: "services/#cloud-computing",
+  //   descritpion:
+  //     "Let's help engage the cloud with your system to meet your business goals.",
+  //   btnText: "Talk to the Expert",
+  //   json: computingJsom,
+  //   color: "blue",
+  //   list: ["DevOps", "AWS", "GCP", "Azure"],
+  // },
   {
-    name: "Cloud Computing",
-    descritpion:
-      "Let's help engage the cloud with your system to meet your business goals.",
-    btnText: "Talk to the Expert",
-    image: "",
-    color: "blue",
-    href: "/services/cloud-computing",
-    list: ["DevOps", "AWS", "GCP", "Azure"],
-  },
-  {
+    id: "consultation",
     name: "Technical Consultation",
     descritpion:
-      "We're here for so that you don't get stack in the tech metaverse complecated solutions.",
+      "We're here for so that you don't get stack in the tech metaverse of complecated solutions. Be it system config or security isues, consult with the experts to streamline your online presence",
     btnText: "Let's Talk",
-    image: "",
+    json: computingJsom,
+    href: "services/#consultation",
     color: "cyan",
-    href: "/services/consultation",
     list: [
       "Analysis",
       "Architecture",
@@ -71,13 +81,14 @@ export const services = [
     ],
   },
   {
+    id: "web-hosting",
     name: "Web Hosting",
+    href: "services/#web-hosting",
     descritpion:
       "Effortlessily host your website with us and get your business online.",
     btnText: "Get Started",
-    image: "",
+    json: computingJsom,
     color: "emerald",
-    href: "/services/web-hosting",
     list: ["Web Site", "API", "VPS", "Database"],
   },
 ];
@@ -94,7 +105,7 @@ export const NAV_LINKS = [
     sub_links: [
       {
         name: "Assubo",
-        href: "https://www.e-duuka.vercel.app",
+        href: "https://e-duuka.vercel.app",
         description: "An online market place for just anything",
       },
       {
@@ -117,30 +128,34 @@ export const NAV_LINKS = [
     ],
   },
   {
-    name: "Resources",
-    href: "#",
-    sub_links: [
-      {
-        name: "Tutorials",
-        href: "/tutorials",
-      },
-      {
-        name: "Events",
-        href: "/events",
-      },
-      {
-        name: "Blog",
-        href: "/blog",
-      },
-      {
-        name: "FAQ",
-        href: "/faqs",
-      },
-    ],
+    name: "Blog",
+    href: "/blog",
   },
+  // {
+  //   name: "Resources",
+  //   href: "#",
+  //   sub_links: [
+  //     {
+  //       name: "Tutorials",
+  //       href: "/tutorials",
+  //     },
+  //     {
+  //       name: "Events",
+  //       href: "/events",
+  //     },
+  //     {
+  //       name: "Blog",
+  //       href: "/blog",
+  //     },
+  //     {
+  //       name: "FAQ",
+  //       href: "/faqs",
+  //     },
+  //   ],
+  // },
   {
-    name: "Learn",
-    href: "/learn",
+    name: "Contact Us",
+    href: "/contact-us",
   },
   {
     name: "Careers",

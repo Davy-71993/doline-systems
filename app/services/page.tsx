@@ -1,6 +1,7 @@
 import Container from "@/components/layout/Container";
 import Button from "@/components/parts/Button";
 import Hr from "@/components/parts/Hr";
+import Service from "@/components/Service";
 import { services } from "@/lib/defaults";
 import { ChevronsRight } from "lucide-react";
 import Link from "next/link";
@@ -41,10 +42,10 @@ const ServicesPage = () => {
   ];
   return (
     <>
-      <div className="w-full min-h-96 bg-sky-950 text-sky-100 -mt-5 py-5">
+      <div className="w-full min-h-96 text-sky-950 -mt-5 py-5">
         <Container className="flex flex-col md:flex-row gap-5 md:gap-0">
-          <div className="w-full opacity-0 -translate-y-2 duration-500 fly-up flex flex-col justify-center gap-5">
-            <h1 className="pt-10 text-3xl font-[700] xl:text-5xl text-center md:text-left">
+          <div className="w-full opacity-0 -translate-y-2 duration-500 fly-up flex flex-col justify-center gap-5 max-w-[60rem] mx-auto">
+            <h1 className="pt-10 text-3xl font-[700] xl:text-5xl text-center">
               It&apos;s our pleasure to serve you with sincere concern for the
               growth of your Project.
             </h1>
@@ -56,25 +57,16 @@ const ServicesPage = () => {
               tech challenges they have addressed, redesigned, and maintained
               throughout time.
             </p>
-            <Button
-              variant={"info"}
-              className="w-full max-w-60 self-center md:self-start"
-            >
-              <LiaUsersCogSolid size={30} />
-              <span>Schedule a Meeting</span>
-            </Button>
+            <Link href={"/contact-us/schedule"} className="w-fit">
+              <Button
+                variant={"info"}
+                className="w-full max-w-60 self-center md:self-start"
+              >
+                <LiaUsersCogSolid size={30} />
+                <span>Schedule a Meeting</span>
+              </Button>
+            </Link>
           </div>
-          {/* <div className="w-full md:max-w-lg md:pt-5 md:pl-5">
-                    <div className="bg-background text-sky-900 rounded-sm h-full w-full flex flex-col gap-5">
-                        <h1 className="text-xl px-5 pt-5 border-b-2 ">Let&apos;s get in touch.</h1>
-                        <div className="px-5 text-lg font-[700]">
-                            <h1 className="">Call us now!</h1>
-                            <h1 className="pl-10 text-teal-500 flex items-center gap-3">+256777921033 <span className="text-sky-800">or</span> +256751437412</h1>
-                        </div>
-                        <h1 className="font-[700] px-5">Or leave us a message.</h1>
-                       <ContactForm color="light" />
-                    </div>
-                </div> */}
         </Container>
       </div>
 
@@ -82,35 +74,14 @@ const ServicesPage = () => {
         id="services"
         className="w-full flex pt-20 flex-col gap-5 min-h-[80vh]"
       >
-        <Link href="/services/#services">
-          <h1 className="text-2xl opacity-0 duration-500 translate-y-2 fly-in">
-            Our Core Services
-          </h1>
-        </Link>
-
-        <div className="w-full min-w-full grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="w-full min-w-full flex flex-col gap-5">
           {services.map((service, index) => (
-            <div
-              key={index}
-              className={`w-full flex flex-col gap-2 p-5 opacity-0 duration-500 translate-y-2 fly-in rounded-xl hover:shadow-xl border border-${service.color}-500 transition-all`}
-            >
-              <h1 className="text-2xl text-center pt-5 font-bold">
-                {service.name}
-              </h1>
-              <p className="w-full text-lg">{service.descritpion}</p>
-              <ol className="list-decimal w-full h-full pl-10">
-                {service.list.map((item, key) => (
-                  <li className="" key={key}>
-                    <span className="w-full">{item}</span>
-                  </li>
-                ))}
-              </ol>
-            </div>
+            <Service key={index} service={service} />
           ))}
         </div>
 
         <Link
-          href="/services"
+          href="/contact-us"
           className="self-end w-full md:w-1/2 xl:w-1/3 md:pl-4"
         >
           <Button variant={"primary"} className="justify-between group w-full">

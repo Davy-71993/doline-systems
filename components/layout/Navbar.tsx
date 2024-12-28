@@ -35,7 +35,13 @@ const Navbar = () => {
                           className="shadow-md min-w-60 pt-5"
                         >
                           {link.sub_links.map((sub_link, index) => (
-                            <Link href={sub_link.href} key={index}>
+                            <Link
+                              href={sub_link.href}
+                              key={index}
+                              target={
+                                link.name === "Products" ? "_blank" : "_self"
+                              }
+                            >
                               <Button className="w-full rounded-none px-5 justify-start">
                                 <span>{sub_link.name}</span>
                               </Button>
